@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; }
+  body { font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  h1, h2, h3, .font-display { font-family: Fraunces, Georgia, serif; letter-spacing: -0.01em; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8; }
+  .card { @apply rounded-2xl border border-huerta-900/10 bg-white shadow-card; }
+  .input { @apply h-12 w-full rounded-xl border border-huerta-900/15 bg-white px-3.5 text-[15px] outline-none transition focus:border-huerta-500 focus:ring-4 focus:ring-huerta-500/15; }
+  .btn { @apply inline-flex h-12 items-center justify-center gap-2 rounded-xl px-5 text-[15px] font-semibold transition active:scale-[.98] disabled:pointer-events-none disabled:opacity-50; }
+  .btn-primary { @apply btn bg-huerta-600 text-white hover:bg-huerta-700; }
+  .btn-secondary { @apply btn border border-huerta-900/15 bg-white text-huerta-900 hover:bg-huerta-50; }
+  .btn-accent { @apply btn bg-tierra-500 text-white hover:bg-tierra-600; }
+  .chip { @apply inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full border px-4 text-sm font-semibold transition; }
+  .label { @apply mb-1.5 block text-[13px] font-semibold text-huerta-900; }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+@keyframes rise { from { opacity: 0; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
+@keyframes slide-in { from { translate: 100% 0; } to { translate: 0 0; } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+.anim-rise { animation: rise .35s ease both; }
+.anim-slide { animation: slide-in .3s cubic-bezier(.2,.8,.2,1) both; }
+.anim-fade { animation: fade .2s ease both; }
